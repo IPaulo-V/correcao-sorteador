@@ -9,8 +9,10 @@ function sortear() {
         let numero = obterNumeroAleatorio(de,ate);
         sorteados.push(numero);
     }
-    alert(sorteados);
-}
+
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
+}    
 function obterNumeroAleatorio (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
