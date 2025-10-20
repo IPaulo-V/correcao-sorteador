@@ -2,7 +2,12 @@ function sortear() {
     let quantidade = parseInt(document.getElementById('quantidade').value);
     let ate = parseInt(document.getElementById('ate').value);
     let de = parseInt(document.getElementById('de').value);
-
+    let quantidadeMinima = ate - de +1
+    
+    if (quantidadeMinima < quantidade) {
+  alert(`Quantidade não eficiente, a quantidade mínima para os números selecionados é ${quantidadeMinima}`);
+  return;
+    }
      if (de >= ate) {
     alert('Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!');
     return;
@@ -27,7 +32,7 @@ function sortear() {
     alterarStatusBotao();
 }    
 function obterNumeroAleatorio (min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function alterarStatusBotao() {
